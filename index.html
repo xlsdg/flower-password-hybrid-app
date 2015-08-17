@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <title>花密</title>
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+</head>
+
+<body>
+    <div class="main">
+        <div id="page-main">
+            <div class="header clearfix">
+                <div class="logo fl">
+                    <span class="logo-img fl"></span>
+                    <h1 class="logo-txt fl">花密</h1>
+                </div>
+                <div class="menu fr">
+                    <div class="menu-setting fr pr" id="btn-menu">
+                        <div class="menu-wrap pa" id="lst-menu">
+                            <ul>
+                                <li id="btn-setting">设置</li>
+                                <li id="btn-about">关于</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <span class="menu-undo fr" id="btn-undo"></span>
+                </div>
+            </div>
+            <div class="content">
+                <from>
+                    <div class="step-01">
+                        <h2 class="step-title clearfix"><em class="step-num fl">1</em>输入</h2>
+                        <div class="step-input-wrap clearfix">
+                            <label for="txt-password" class="step-txt fl">记忆密码:</label>
+                            <input type="password" id="txt-password" class="step-input" />
+                        </div>
+                        <span id="smb-plus">+</span>
+                        <div class="step-input-wrap clearfix pr">
+                            <label for="txt-key" class="step-txt fl">区分代号:</label>
+                            <input type="text" id="txt-key" class="step-input" />
+                            <div class="div-keys pa" id="div-keys">
+                                <ul class="lst-keys" id="lst-keys">
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="step-02">
+                        <h2 class="step-title clearfix"><em class="step-num fl">2</em>获取</h2>
+                        <div class="step-input-wrap clearfix">
+                            <input type="text" id="txt-code" class="fl" readonly="readonly" />
+                            <a href="javascript:;" id="btn-copy" class="fl">点击复制</a>
+                        </div>
+                    </div>
+                </from>
+            </div>
+            <div class="footer">
+                <p class="fot-txt">•记忆密码：选择一个与个人信息无关的密码，防止社会工程学破解。</p>
+                <p class="fot-txt">•区分代号：用于区别不同用途密码的简短代号，如淘宝账号可用“taobao”或“tb”等。</p>
+            </div>
+        </div>
+        <div id="page-setting">
+            <div class="header clearfix">
+                <div class="logo fl" id="logo-setting">
+                    <span class="logo-back fl">&lt;</span>
+                    <span class="logo-img fl"></span>
+                    <h1 class="logo-txt fl">设置</h1>
+                </div>
+            </div>
+            <div class="content">
+                <dl class="lst-setting">
+                    <dt class="setting-title">区分代号</dt>
+                    <dd class="setting-item clearfix">
+                        <label for="chk-autosave-key">
+                            <div class="left-part fl">
+                                <h3>保存区分代号</h3>
+                                <p>自动保存并列出使用过的区分代号</p>
+                            </div>
+                        </label>
+                        <div class="right-part fr pr">
+                            <input type="checkbox" id="chk-autosave-key" class="right-chk pa" />
+                        </div>
+                    </dd>
+                    <dd class="setting-item clearfix">
+                        <label for="btn-clear-key">
+                            <div class="left-part fl">
+                                <h3>清空区分代号</h3>
+                                <p>清空已保存的区分代号</p>
+                            </div>
+                        </label>
+                        <div class="right-part fr pr">
+                            <input type="button" id="btn-clear-key" class="pa" hidden="hidden" />
+                        </div>
+                    </dd>
+                    <dd class="setting-item clearfix">
+                        <label for="chk-custom-suffix">
+                            <div class="left-part fl">
+                                <h3>组合附加扰码</h3>
+                                <p>自动在区分代号后面添加扰码</p>
+                            </div>
+                        </label>
+                        <div class="right-part fr pr">
+                            <input type="checkbox" id="chk-custom-suffix" class="right-chk pa" />
+                        </div>
+                    </dd>
+                    <dt class="setting-title">生成密码</dt>
+                    <dd class="setting-item clearfix">
+                        <label for="chk-custom-digit">
+                            <div class="left-part fl">
+                                <h3>自定义密码长度</h3>
+                                <p>自定义生成密码位数（默认16位）</p>
+                            </div>
+                        </label>
+                        <div class="right-part fr pr">
+                            <input type="checkbox" id="chk-custom-digit" class="right-chk pa" />
+                        </div>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+        <div id="page-about">
+            <div class="header clearfix">
+                <div class="logo fl" id="logo-about">
+                    <span class="logo-back fl">&lt;</span>
+                    <span class="logo-img fl"></span>
+                    <h1 class="logo-txt fl">关于</h1>
+                </div>
+            </div>
+            <div class="content">
+                <h2>1.设计一个你自己的记忆密码</h2>
+                <p>花密使用“记忆密码”加上“区分代号”为你计算出最终密码，所以一个安全、强壮的记忆密码非常重要。</p>
+                <p>记忆密码应该难以被暴力猜解，所以尽量使用大小写字母、数字、符号去组成你的密码。长度是防止被暴力破解的关键，一个长度10位的包含大小写字母、数字、符号的密码，以目前单机计算能力破解密码至少需要928年。</p>
+                <p>同时谨防社会工程学，记忆密码不要包含任何和个人信息相关的内容</p>
+                <h2>2.选择一个符合自己习惯的区分代号</h2>
+                <p>例如，淘宝账号，你可以使用“taobao”、“tb”、“淘宝”等作为自己的区分代号，只要符合自己习惯就行。</p>
+                <p>在花密chrome扩展里，你可以设置默认将网站域名字段填入区分代号。</p>
+                <h2>3.使用花密应用生成最终密码，修改原密码</h2>
+                <p>使用花密应用填入“记忆密码”和“区分代号”，生成最终密码。</p>
+                <p>修改原账号的密码为花密生成的最终密码。如果是新注册账号，在注册时填入花密生成的密码即可。</p>
+                <h2>4.使用花密密码登陆你的账号</h2>
+                <p>今后每次登陆此账号需要先用花密应用生成最终密码。</p>
+                <p>花密提供多种应用帮助你简化使用步骤，如使用花密chrome扩展可以省去复制粘贴密码的过程。</p>
+            </div>
+            <div class="footer">Copyright&nbsp;&copy;&nbsp;2011-2015&nbsp;FlowerPassword.com&nbsp;All&nbsp;rights&nbsp;reserved.</div>
+            <div class="author">Build&nbsp;By&nbsp;xLsDg[xlsdg@qq.com]</div>
+        </div>
+    </div>
+    <script type="text/javascript" src="js/pageResponse.min.js"></script>
+    <script type="text/javascript">
+        window.onload = window.onresize = function() {
+            var page = new pageResponse({
+                class: 'main', //模块的类名，使用class来控制页面上的模块(1个或多个)
+                mode: 'auto', // auto || contain || cover ，默认模式为auto
+                width: '692', //输入页面的宽度，只支持输入数值，默认宽度为320px
+                height: '900' //输入页面的高度，只支持输入数值，默认高度为504px
+            });
+        };
+    </script>
+    <script src="js/flowerpassword.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/app.js" type="text/javascript" charset="utf-8"></script>
+</body>
+
+</html>
